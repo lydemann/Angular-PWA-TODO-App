@@ -14,6 +14,8 @@ import { AddTodoComponent } from '@app/add-todo/add-todo.component';
 import { CoreModule } from '@app/core/core.module';
 import { TodoListCompletedComponent } from '@app/todo-list-completed/todo-list-completed.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { SharedModule } from '@app/shared/shared.module';
     CoreModule,
     SharedModule,
     HttpClientModule,
-    appRouterModule
+    appRouterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

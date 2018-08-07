@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class TodoListService {
 
     public todoList: TODOItem[] = [];
-    private todoListUrl = '//localhost:8080/todo-list';
+    private todoListUrl = 'http://localhost:8080/todo-list';
 
     constructor(httpClient: HttpClient) {
          httpClient.get<Array<TODOItem>>(this.todoListUrl).subscribe(data => {

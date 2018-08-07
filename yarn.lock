@@ -80,6 +80,15 @@
     "@angular-devkit/core" "0.8.0-beta.1"
     rxjs "^6.0.0"
 
+"@angular-devkit/core@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.7.2.tgz#f86c65c70daa8fccf67f4f5767a4ade7a5975caf"
+  dependencies:
+    ajv "~6.4.0"
+    chokidar "^2.0.3"
+    rxjs "^6.0.0"
+    source-map "^0.5.6"
+
 "@angular-devkit/core@0.8.0-beta.1":
   version "0.8.0-beta.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.0-beta.1.tgz#2bb846084ecbeadb82ad3c8d3389d7fd86552214"
@@ -88,6 +97,13 @@
     chokidar "^2.0.3"
     rxjs "^6.0.0"
     source-map "^0.5.6"
+
+"@angular-devkit/schematics@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.7.2.tgz#809d62a264265cf345228aabead42695aa96dc64"
+  dependencies:
+    "@angular-devkit/core" "0.7.2"
+    rxjs "^6.0.0"
 
 "@angular-devkit/schematics@0.8.0-beta.1":
   version "0.8.0-beta.1"
@@ -178,18 +194,24 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/pwa@^0.8.0-beta.1":
-  version "0.8.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/pwa/-/pwa-0.8.0-beta.1.tgz#a416b340896e8d7a87fb3a15d88360a42903156f"
+"@angular/pwa@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@angular/pwa/-/pwa-0.7.2.tgz#a30655517abf3162c5f06ed86716f38e0ab90c6d"
   dependencies:
-    "@angular-devkit/core" "0.8.0-beta.1"
-    "@angular-devkit/schematics" "0.8.0-beta.1"
-    "@schematics/angular" "0.8.0-beta.1"
+    "@angular-devkit/core" "0.7.2"
+    "@angular-devkit/schematics" "0.7.2"
+    "@schematics/angular" "0.7.2"
     typescript "~2.6.2"
 
 "@angular/router@^6.1.0":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.1.1.tgz#b597da6009213b656347ec13b89de3643e5767c0"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/service-worker@^6.1.0":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-6.1.1.tgz#9d7bfea9c1b363dc81bc9109fee95147f0a55100"
   dependencies:
     tslib "^1.9.0"
 
@@ -205,6 +227,14 @@
     rxjs "^6.0.0"
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
+
+"@schematics/angular@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.7.2.tgz#f51f9391519050aabd43752cb97c28d878d69990"
+  dependencies:
+    "@angular-devkit/core" "0.7.2"
+    "@angular-devkit/schematics" "0.7.2"
+    typescript ">=2.6.2 <2.8"
 
 "@schematics/angular@0.8.0-beta.1":
   version "0.8.0-beta.1"

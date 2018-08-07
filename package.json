@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "nodemon server | ng serve",
+    "start:prod": "nodemon server | ng serve --ssl --prod",
     "build": "ng build --prod",
     "test": "ng test --sourcemaps false",
     "lint": "ng lint",
@@ -20,8 +21,9 @@
     "@angular/http": "^6.1.0",
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
-    "@angular/pwa": "^0.8.0-beta.1",
+    "@angular/pwa": "^0.7.2",
     "@angular/router": "^6.1.0",
+    "@angular/service-worker": "^6.1.0",
     "@ng-bootstrap/ng-bootstrap": "^2.2.1",
     "bootstrap": "^4.0.0",
     "core-js": "^2.5.4",
