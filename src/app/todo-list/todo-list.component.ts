@@ -1,7 +1,6 @@
-import { TODOItem } from '@app/shared/models/todo-item';
-import { TodoListService } from '@app/core/todo-list/todo-list.service';
 import { Component } from '@angular/core';
-import { PwaService } from '@app/core/pwa/pwa.service';
+import { TodoListService } from '@app/core/todo-list/todo-list.service';
+import { TODOItem } from '@app/shared/models/todo-item';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,26 +8,24 @@ import { PwaService } from '@app/core/pwa/pwa.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
+  public currentTODO: TODOItem = new TODOItem('', '');
 
-  currentTODO: TODOItem = new TODOItem('', '');
-
-  constructor(private todoListService: TodoListService, public Pwa: PwaService) { }
+  constructor(private todoListService: TodoListService) {}
 
   get todoList() {
     return this.todoListService.todoList;
   }
 
-  installPwa(): void {
-    this.Pwa.promptEvent.prompt();
+  public fetchFreshTodoList() {
+    this.todoListService.getAndSetNewTodoList();
   }
 
-  deleteTodo(id: string) {
-
-    const deleteIndex = this.todoListService.todoList.findIndex(todo => todo.id === id);
+  public deleteTodo(id: string) {
+    const deleteIndex = this.todoListService.todoList.findIndex((todo) => todo.id === id);
     this.todoListService.todoList.splice(deleteIndex, 1);
   }
 
-  editTodo(todoItem: TODOItem) {
+  public editTodo(todoItem: TODOItem) {
     this.currentTODO = todoItem;
   }
 }

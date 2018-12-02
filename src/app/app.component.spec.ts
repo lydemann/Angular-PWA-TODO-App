@@ -1,43 +1,30 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from '@app/app.component';
-import { NavbarComponent } from '@app/navbar/navbar.component';
-import { TodoListComponent } from '@app/todo-list/todo-list.component';
-import { TodoItemComponent } from '@app/todo-item/todo-item.component';
-import { FooterComponent } from '@app/footer/footer.component';
-import { AddTodoComponent } from '@app/add-todo/add-todo.component';
-import { TodoListCompletedComponent } from '@app/todo-list-completed/todo-list-completed.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
-import { CoreModule } from '@app/core/core.module';
-import { HttpClientModule } from '@angular/common/http';
-import { appRouterModule } from '@app/app.routes';
 import { APP_BASE_HREF } from '@angular/common';
+import { async, TestBed } from '@angular/core/testing';
+import { AppComponent } from '@app/app.component';
+import { TranslateService } from '@ngx-translate/core';
+import { FooterComponentMock } from './footer/footer.component.mock';
+import { SpyHelper } from './helpers/spy-helper';
+import { NavbarComponentMock } from './navbar/navbar.component.mock';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        NavbarComponent,
-        TodoListComponent,
-        TodoItemComponent,
-        FooterComponent,
-        AddTodoComponent,
-        TodoListCompletedComponent,
-    ],
-      imports: [
-        BrowserModule,
-        NgbModule.forRoot(),
-        FormsModule,
-        CoreModule,
-        HttpClientModule,
-        appRouterModule
-      ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
-    }).compileComponents();
+      declarations: [AppComponent, NavbarComponentMock, FooterComponentMock],
+      imports: [],
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' },
+        SpyHelper.provideMagicalMock(TranslateService)
+      ]
+    })
+      .overrideTemplate(AppComponent, '')
+      .compileComponents();
   }));
+
+  let translateServiceMock: jasmine.SpyObj<TranslateService>;
   it('should create the app', async(() => {
+    translateServiceMock = TestBed.get(TranslateService);
+    translateServiceMock.getBrowserLang.and.returnValue('en');
     const fixture = TestBed.createComponent(AppComponent);
+
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));

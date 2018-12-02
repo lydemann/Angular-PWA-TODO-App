@@ -1,6 +1,6 @@
 {
-  "name": "pwa-demo",
-  "short_name": "pwa-demo",
+  "name": "angular-demo-with-best-practices",
+  "short_name": "angular-demo-with-best-practices",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

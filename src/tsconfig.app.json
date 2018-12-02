@@ -2,9 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [
+      "jasmine",
+      "node"
+    ]
   },
   "exclude": [
+    "**/*.mock.ts",
     "src/test.ts",
     "**/*.spec.ts"
   ]
