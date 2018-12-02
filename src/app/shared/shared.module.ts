@@ -1,19 +1,28 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { InvalidDateValidatorDirective } from '@app/shared/invalid-date.directive';
-import { SpinnerModule } from '@app/shared/spinner/spinner.module';
 import { SpinnerOverlayWrapperModule } from '@app/shared/spinner-overlay-wrapper/spinner-overlay-wrapper.module';
+import { SpinnerModule } from '@app/shared/spinner/spinner.module';
+import { TodoItemComponent } from '@app/shared/todo-item/todo-item.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppMaterialModule } from './app-material/app-material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     SpinnerModule,
-    SpinnerOverlayWrapperModule
+    SpinnerOverlayWrapperModule,
+    TranslateModule,
+    AppMaterialModule
   ],
-  declarations: [
+  declarations: [InvalidDateValidatorDirective, TodoItemComponent],
+  exports: [
     InvalidDateValidatorDirective,
-],
-  exports: [InvalidDateValidatorDirective,
-  SpinnerModule, SpinnerOverlayWrapperModule]
+    SpinnerModule,
+    SpinnerOverlayWrapperModule,
+    TranslateModule,
+    TodoItemComponent,
+    AppMaterialModule
+  ]
 })
-export class SharedModule { }
+export class SharedModule {}

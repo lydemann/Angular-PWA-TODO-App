@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { PwaService } from './pwa.service';
+import { AppInitService } from './app-init.service';
 
-describe('Service: Pwa', () => {
+describe('Service: AppInit', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PwaService]
+      providers: [AppInitService]
     });
   });
 
-  it('should ...', inject([PwaService], (service: PwaService) => {
+  it('should ...', inject([AppInitService], (service: AppInitService) => {
     expect(service).toBeTruthy();
   }));
 });
