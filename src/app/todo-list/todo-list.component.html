@@ -1,6 +1,12 @@
 <div class="todo-list-wrapper">
   <div class="mx-auto col-10">
-    <h5>{{'todo-list' | translate}}</h5>
+    <div class="todo-list-title-bar">
+      <h5>{{'todo-list' | translate}}</h5>
+
+      <button class="btn btn-info pull-right" (click)="fetchFreshTodoList()">
+        {{'todo-list-section.refresh-todolist' | translate}}
+      </button>
+    </div>
     <hr>
 
     <app-cards-list [tableRef]="todoListRef" [cardRef]="todoItemCardRef" [data]="todoList"></app-cards-list>

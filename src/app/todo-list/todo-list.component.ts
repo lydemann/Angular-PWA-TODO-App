@@ -16,6 +16,10 @@ export class TodoListComponent {
     return this.todoListService.todoList;
   }
 
+  public fetchFreshTodoList() {
+    this.todoListService.getAndSetNewTodoList();
+  }
+
   public deleteTodo(id: string) {
     const deleteIndex = this.todoListService.todoList.findIndex((todo) => todo.id === id);
     this.todoListService.todoList.splice(deleteIndex, 1);

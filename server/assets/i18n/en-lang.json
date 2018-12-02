@@ -13,7 +13,8 @@
   },
   "todo-list-section": {
     "show-cards": "Show cards",
-    "show-list": "Show list"
+    "show-list": "Show list",
+    "refresh-todolist": "Update TODO list"
   },
   "add-todo": {
     "headline": "Add TODO",
